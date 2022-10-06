@@ -2,12 +2,13 @@ import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter } from "react-router-dom"
 import { Provider } from "react-redux"
-
+import { ThemeProvider } from 'styled-components'
 import "normalize.css"
 import App from '@/App'
 import "./assets/css/index.less"
 import Loading from 'components/app-loading'
 import store from './store'
+import theme from './assets/theme'
 
 // @ => src: webpack
 // 问题: react脚手架隐藏webpack
@@ -16,13 +17,13 @@ import store from './store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
   <Suspense fallback={<Loading />}>
     <Provider store={store}>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <ThemeProvider theme={theme}>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </ThemeProvider>
     </Provider>
   </Suspense>
-  // </React.StrictMode>
 );
