@@ -1,5 +1,5 @@
 // im
-import ScrollView from '@/base-ui/scroll-view'
+import ScrollView from '@/base-ui/scroll-view/scroll-view'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'

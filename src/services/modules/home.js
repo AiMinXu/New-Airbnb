@@ -23,3 +23,15 @@ export const getHomeHotRecommendData = () => {
     url: "home/hotrecommenddest"
   })
 }
+
+export const getHomeLongforData = () => {
+  return xamRequest.get({
+    url: "home/longfor"
+  })
+}
+
+export const getHomePlusforData = () => {
+  return xamRequest.get({
+    url: "home/plus"
+  })
+}

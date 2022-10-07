@@ -15,6 +15,8 @@ class XAMRequest {
     }, err => {
       return err
     })
+
+    //请求拦截器---对应状态改变loading状态需要拿到store，使用store.dispatch
   }
 
   //定义类方法
