@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
+
 export const RightWrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-weight: 600;
-  color: ${props => props.theme.text.primaryColor};
 
-  .btns{
+  color: ${props => props.theme.text.primaryColor};
+  font-weight: 600;
+
+  .btns {
     display: flex;
     box-sizing: content-box;
+    color: ${props => props.theme.isAlpha ? "#fff" : props.theme.text.primaryColor};
 
-    .btn{
+    .btn {
       height: 18px;
       line-height: 18px;
       padding: 12px 15px;
@@ -21,12 +24,12 @@ export const RightWrapper = styled.div`
       box-sizing: content-box;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,.1)" : "#f5f5f5"};
       }
     }
   }
 
-  .profile{
+  .profile {
     position: relative;
     display: flex;
     justify-content: space-evenly;
@@ -53,7 +56,7 @@ export const RightWrapper = styled.div`
       box-shadow: 0 0 6px rgba(0,0,0,.2);
       color: #666;
 
-      .top, .bottom {
+      .top1, .bottom {
         padding: 10px 0;
 
         .item {
@@ -67,7 +70,7 @@ export const RightWrapper = styled.div`
         }
       }
 
-      .top {
+      .top1 {
         border-bottom: 1px solid #ddd;
       }
     }

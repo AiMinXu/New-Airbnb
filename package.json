@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
     "@mui/styled-engine-sc": "^5.10.6",
     "@reduxjs/toolkit": "^1.8.5",
@@ -21,7 +27,9 @@
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
+    "underscore": "^1.13.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -50,6 +58,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.0.0-alpha.8",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "@types/underscore": "^1.11.4"
   }
 }

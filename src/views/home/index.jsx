@@ -2,17 +2,14 @@ import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 import { fetchHomeDataAction } from '@/store/modules/home'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 import HomeBanner from './c-cpns/home-banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
-import { HomeWrapper } from './style'
-// import SectionHeader from '@/components/section-header'
-// import SectionFooter from '@/components/section-footer'
-// import SectionTabs from '@/components/section-tabs'
-// import SectionRooms from '@/components/section-rooms'
 import HomeSectionV2 from './c-cpns/home-section-v2'
-import { isEmptyObject } from '@/utils'
-import HomeLongfor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
+import HomeLongfor from './c-cpns/home-longfor'
+import { isEmptyObject } from '@/utils'
+import { HomeWrapper } from './style'
 
 const Home = memo((props) => {
 
@@ -26,7 +23,8 @@ const Home = memo((props) => {
   }), shallowEqual)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchHomeDataAction())//派发网络请求
+    dispatch(fetchHomeDataAction('xxxxxx'))//派发网络请求
+    dispatch(changeHeaderConfigAction({ isFixed: true, topAlpha: true }))
   }, [dispatch])
 
   return (
