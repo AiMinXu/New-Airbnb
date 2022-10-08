@@ -26,9 +26,9 @@ const AppHeader = memo(() => {
   //弹出搜索框功能后，滚动距离大于之前记录的距离的30，将状态设置为false
   if (isSearch && Math.abs(scrollY - prevY.current) > 30) setIsSearch(false)
   /** 透明度的逻辑 */
-  console.log(scrollY);
+  // console.log(scrollY);
   const isAlpha = topAlpha && scrollY === 0
-  console.log(topAlpha);
+  // console.log(topAlpha);
   return (
     <ThemeProvider theme={{ isAlpha }}>
       <HeaderWrapper className={classNames({ fixed: isFixed })}>

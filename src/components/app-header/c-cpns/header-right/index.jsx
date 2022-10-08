@@ -4,10 +4,12 @@ import { RightWrapper } from './style'
 import IconAvatar from '@/assets/svg/icon_avatar'
 import IconGlobal from '@/assets/svg/icon_global'
 import IconMenu from '@/assets/svg/icon_menu'
+import { useNavigate } from 'react-router-dom'
 
 
 const HeaderRight = memo(() => {
   const [showPanel, setShowPanel] = useState(false)
+  const navigate = useNavigate()
 
   //监听窗口点击
   useEffect(() => {
@@ -23,11 +25,19 @@ const HeaderRight = memo(() => {
   const profileClickHandle = () => {
     showPanel === false ? setShowPanel(true) : setShowPanel(false)
   }
+  const registerAndLoginHandle = (isRegister) => {
+    if (isRegister) {
+      navigate('/register')
+    } else {
+      navigate('/login')
+    }
+  }
+
   return (
     <RightWrapper>
       <div className='btns'>
-        <span className='btn'>登录</span>
-        <span className='btn'>注册</span>
+        <span className='btn' onClick={e => registerAndLoginHandle(false)}>登录</span>
+        <span className='btn' onClick={e => registerAndLoginHandle(true)}>注册</span>
         <span className='btn'>
           <IconGlobal />
         </span>
@@ -40,8 +50,8 @@ const HeaderRight = memo(() => {
         {showPanel && (
           <div className='panel'>
             <div className='top1'>
-              <div className='item register'>注册</div>
-              <div className='item login'>登录</div>
+              <div className='item register' onClick={e => registerAndLoginHandle(true)}>注册</div>
+              <div className='item login' onClick={e => registerAndLoginHandle(false)}>登录</div>
             </div>
             <div className='bottom'>
               <div className='item'>出租房源</div>
